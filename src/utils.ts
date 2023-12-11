@@ -1,4 +1,3 @@
-import getRandomValues from 'get-random-values'
 import type { Message } from 'js-sha3'
 import { keccak256 } from 'js-sha3'
 import { Bytes, Reference } from './types'
@@ -133,8 +132,11 @@ export function toBigEndianFromUint16(value: number): Bytes<2> {
 
 export function gen32Bytes(): Bytes<32> {
   const bytes = new Uint8Array(32)
+  for (let i = 0; i < bytes.length; i++) {
+    bytes[i] = Math.floor(Math.random() * 256)
+  }
 
-  return getRandomValues(bytes) as Bytes<32>
+  return bytes as Bytes<32>
 }
 
 /** It returns the common bytes of the two given byte arrays until the first byte difference */
