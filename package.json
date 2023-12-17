@@ -12,7 +12,8 @@
     "lint": "eslint --fix \"src/**/*.ts\" && prettier --write \"src/**/*.ts\"",
     "lint:check": "eslint \"src/**/*.ts\" && prettier --check \"src/**/*.ts\"",
     "check:types": "tsc --project tsconfig.json --skipLibCheck",
-    "test": "jest --verbose --config=jest.config.ts",
+    "test-all": "jest --verbose --config=jest.config.ts",
+    "test": "jest   --config=jest.config.ts test/test.spec.ts",
     "bee-factory": "bee-factory start --detach 1.7.0"
   },
   "keywords": [
@@ -52,5 +53,8 @@
     "webpack": "^5.89.0",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11"
   }
 }

@@ -132,9 +132,7 @@ export function toBigEndianFromUint16(value: number): Bytes<2> {
 
 export function gen32Bytes(): Bytes<32> {
   const bytes = new Uint8Array(32)
-  for (let i = 0; i < bytes.length; i++) {
-    bytes[i] = Math.floor(Math.random() * 256)
-  }
+  for (let i = 0; i < 32; i++) bytes[i] = Math.floor(Math.random() * 256)
 
   return bytes as Bytes<32>
 }
